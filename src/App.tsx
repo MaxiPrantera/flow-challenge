@@ -13,23 +13,23 @@ const CITIES: Record<string, City> = {
 }, palermo:{
   id: 'palermo',
   name: 'Palermo',
-  lat: 0,
-  lon: 0
+  lat: -34.5732721,
+  lon: -58.4908839,
 }, colon:{
   id: 'colon',
   name: 'Colon',
-  lat: 0,
-  lon: 0
+  lat: -34.5732721,
+  lon: -58.4908839,
 },bariloche:{
   id: 'bariloche',
   name: 'Bariloche',
-  lat: 0,
-  lon: 0
+  lat: -41.1259668,
+  lon: -71.8989739,
 },varela:{
   id: 'varela',
   name: 'Varela',
-  lat: 0,
-  lon: 0
+  lat: -41.1259668,
+  lon: -71.8989739,
 },
 };
 
@@ -49,7 +49,7 @@ function App() {
     });
   },[city])
 
-  if (status === 'pending') {
+  if (status == 'pending') {
     return <div>Loading...</div>
   }
   if(!weather) {
@@ -69,7 +69,7 @@ function App() {
       <ul>
         {weather.forecast.map((forecast, index) => (
           <li key={index}>
-            Min: {forecast.min},  Max: {forecast.max}
+            {forecast.date}: Min: {forecast.min} C°,  Max: {forecast.max} C°
           </li>
         ))}
       </ul>
